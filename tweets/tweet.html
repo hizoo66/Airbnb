@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tweet List</title>
+</head>
+<body>
+    <h1>All Tweets</h1>
+    
+    <ul>
+        {% for tweet in tweets %}
+            <li>
+                <strong>{{ tweet.user.username }}</strong>: {{ tweet.content }} <br>
+                <small>{{ tweet.created_at }}</small>
+            </li>
+        {% empty %}
+            <li>No tweets available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
