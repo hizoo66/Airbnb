@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.tweet_list, name="tweet_list"),  # / 경로에 트윗 리스트 보여주기
+    path("api/v1/tweets/", views.all_tweets, name="all_tweets"),
+    path("api/v1/users/<int:user_id>/tweets/", views.user_tweets, name="user_tweets"),
 ]
